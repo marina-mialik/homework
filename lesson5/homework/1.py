@@ -20,8 +20,8 @@ for i in range(3):
 
 name_product = input()
 
-products[name_product] *= 1.15
-products[name_product] = round(products[name_product], 2)
-
+increased_price = products[name_product] * 1.15
+print(f"Цена {name_product} с увеличением 15%: {increased_price:.2f}")
+      
 print(sum(products.values()))
 
