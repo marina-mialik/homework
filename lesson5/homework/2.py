@@ -40,4 +40,14 @@ employees = {
 
 employee_name = input("Введите ФИО сотрудника: ")
 
-print(employees[employee_name])
+employee = employees[employee_name]
+print(f"Информация о сотруднике: {employee_name}")
+print(f"Должность: {employee['должность']}")
+print(f"Год рождения: {employee['год_рождения']}")
+print("Навыки:")
+for skill in employee["навыки"]:
+  print(f"    - {skill}")
+print("Дети:")
+if employee["дети"]:
+  for child in employee["дети"]:
+   print(f"    - {child['имя']}, год рождения: {child['год_рождения']}")
