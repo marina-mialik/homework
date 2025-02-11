@@ -10,7 +10,7 @@ Yes - если число уже встречалось и No, если нет
 
 def yes_or_no(numbers: list) -> list:
     if not all(isinstance(num, int) for num in numbers):
-        return []
+        return False
 
     yes = "yes"
     no = "no"
