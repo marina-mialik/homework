@@ -35,6 +35,22 @@
 
 '''
 
+def get_list_view(deep_list, padding="-"):
+    stack = []
+
+    for item in reversed(deep_list):
+      stack.append((item, 0))
+    
+    while stack:
+      item, level = stack.pop()
+
+      if isinstance(item, list):
+        for element in reversed(item):
+          stack.append((element, level + 1))
+      else:
+        shifted_padding = padding * 2 * level
+        print(f"{shifted_padding}{item}")
+  
 def get_list_view_recursion(lst: list, padding="-"):
     if not len(lst):
         raise ValueError("Значение lst не может быть пустым!")
@@ -58,6 +74,7 @@ some_padding = "*"
 empty_padding = ""
 
 try:
+    get_list_view(some_list)
     get_list_view_recursion(some_list)
     print('===========')
     get_list_view_recursion(some_list, padding=some_padding)
